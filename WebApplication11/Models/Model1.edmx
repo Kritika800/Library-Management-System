@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LibraryManagemntsystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BookReturn">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BookName" Type="varchar" MaxLength="50" />
+          <Property Name="Returndate" Type="date" />
+          <Property Name="issuedate" Type="date" />
+        </EntityType>
+        <EntityType Name="Fine_generated">
+          <Key>
+            <PropertyRef Name="FineId" />
+          </Key>
+          <Property Name="FineId" Type="int" Nullable="false" />
+          <Property Name="BookName" Type="varchar" MaxLength="50" />
+          <Property Name="Fine_Charged" Type="int" />
+          <Property Name="Dateofissue" Type="varchar" MaxLength="50" />
+          <Property Name="Dateofreturn" Type="varchar" MaxLength="50" />
+          <Property Name="Original_Dateofreturn" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="My Book Rating">
+          <Key>
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Name="BookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Feedback" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MyCart">
+          <Key>
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Name="BookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BookName" Type="varchar" MaxLength="50" />
+          <Property Name="DATE_OF_ISSUE" Type="date" />
+          <Property Name="DATE_OF_RETURN" Type="date" />
+        </EntityType>
+        <EntityType Name="NewBookCollection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Purchase History">
+          <Key>
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Name="BookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BookName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="StudentLogin">
+          <Key>
+            <PropertyRef Name="RollNo" />
+          </Key>
+          <Property Name="RollNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="EmailId" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="LibraryManagemntsystemModelStoreContainer">
+          <EntitySet Name="BookReturn" EntityType="Self.BookReturn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fine_generated" EntityType="Self.Fine_generated" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="My Book Rating" EntityType="Self.My Book Rating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MyCart" EntityType="Self.MyCart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewBookCollection" EntityType="Self.NewBookCollection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Purchase History" EntityType="Self.Purchase History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentLogin" EntityType="Self.StudentLogin" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LibraryManagemntsystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BookReturn">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Returndate" Type="DateTime" Precision="0" />
+          <Property Name="issuedate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="My_Book_Rating">
+          <Key>
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Name="BookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Feedback" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MyCart">
+          <Key>
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Name="BookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_OF_ISSUE" Type="DateTime" Precision="0" />
+          <Property Name="DATE_OF_RETURN" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="NewBookCollection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Purchase_History">
+          <Key>
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Name="BookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="StudentLogin">
+          <Key>
+            <PropertyRef Name="RollNo" />
+          </Key>
+          <Property Name="RollNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="LibraryManagemntsystemEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BookReturns" EntityType="Self.BookReturn" />
+          <EntitySet Name="My_Book_Ratings" EntityType="Self.My_Book_Rating" />
+          <EntitySet Name="MyCarts" EntityType="Self.MyCart" />
+          <EntitySet Name="NewBookCollections" EntityType="Self.NewBookCollection" />
+          <EntitySet Name="Purchase_Histories" EntityType="Self.Purchase_History" />
+          <EntitySet Name="StudentLogins" EntityType="Self.StudentLogin" />
+          <EntitySet Name="Fine_generated" EntityType="LibraryManagemntsystemModel.Fine_generated" />
+        </EntityContainer>
+        <EntityType Name="Fine_generated">
+          <Key>
+            <PropertyRef Name="FineId" />
+          </Key>
+          <Property Name="FineId" Type="Int32" Nullable="false" />
+          <Property Name="BookName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fine_Charged" Type="Int32" />
+          <Property Name="Dateofissue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dateofreturn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Original_Dateofreturn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LibraryManagemntsystemModelStoreContainer" CdmEntityContainer="LibraryManagemntsystemEntities3">
+          <EntitySetMapping Name="BookReturns">
+            <EntityTypeMapping TypeName="LibraryManagemntsystemModel.BookReturn">
+              <MappingFragment StoreEntitySet="BookReturn">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BookName" ColumnName="BookName" />
+                <ScalarProperty Name="Returndate" ColumnName="Returndate" />
+                <ScalarProperty Name="issuedate" ColumnName="issuedate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="My_Book_Ratings">
+            <EntityTypeMapping TypeName="LibraryManagemntsystemModel.My_Book_Rating">
+              <MappingFragment StoreEntitySet="My Book Rating">
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MyCarts">
+            <EntityTypeMapping TypeName="LibraryManagemntsystemModel.MyCart">
+              <MappingFragment StoreEntitySet="MyCart">
+                <ScalarProperty Name="DATE_OF_RETURN" ColumnName="DATE_OF_RETURN" />
+                <ScalarProperty Name="DATE_OF_ISSUE" ColumnName="DATE_OF_ISSUE" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="BookName" ColumnName="BookName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewBookCollections">
+            <EntityTypeMapping TypeName="LibraryManagemntsystemModel.NewBookCollection">
+              <MappingFragment StoreEntitySet="NewBookCollection">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Purchase_Histories">
+            <EntityTypeMapping TypeName="LibraryManagemntsystemModel.Purchase_History">
+              <MappingFragment StoreEntitySet="Purchase History">
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="BookName" ColumnName="BookName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentLogins">
+            <EntityTypeMapping TypeName="LibraryManagemntsystemModel.StudentLogin">
+              <MappingFragment StoreEntitySet="StudentLogin">
+                <ScalarProperty Name="RollNo" ColumnName="RollNo" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fine_generated">
+            <EntityTypeMapping TypeName="LibraryManagemntsystemModel.Fine_generated">
+              <MappingFragment StoreEntitySet="Fine_generated">
+                <ScalarProperty Name="Original_Dateofreturn" ColumnName="Original_Dateofreturn" />
+                <ScalarProperty Name="Dateofreturn" ColumnName="Dateofreturn" />
+                <ScalarProperty Name="Dateofissue" ColumnName="Dateofissue" />
+                <ScalarProperty Name="Fine_Charged" ColumnName="Fine_Charged" />
+                <ScalarProperty Name="BookName" ColumnName="BookName" />
+                <ScalarProperty Name="FineId" ColumnName="FineId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

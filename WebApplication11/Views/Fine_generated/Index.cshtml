@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication11.Models.Fine_generated>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fine_Charged)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dateofissue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dateofreturn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Original_Dateofreturn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fine_Charged)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dateofissue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dateofreturn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Original_Dateofreturn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FineId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FineId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FineId })
+        </td>
+    </tr>
+}
+
+</table>

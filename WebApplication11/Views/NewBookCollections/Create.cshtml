@@ -1,0 +1,38 @@
+﻿@model WebApplication11.Models.NewBookCollection
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<center>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+
+    <style>
+        body {
+            background-color: lightseagreen
+        }
+    </style>
+
+        <div class="form-horizontal">
+            <p>we have updated collection of books, Please have a look at our new collections by register</p>
+            <br />
+            <h6>Please Register to proceed further</h6>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+
+            <a href="https://localhost:44369/StudentLogins/Create">PROCEED</a>
+
+        </div>
+    }
+
+
+</center>

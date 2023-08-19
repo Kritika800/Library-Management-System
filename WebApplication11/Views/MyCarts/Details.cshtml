@@ -1,0 +1,42 @@
+﻿@model WebApplication11.Models.MyCart
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MyCart</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_OF_ISSUE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_OF_ISSUE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_OF_RETURN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_OF_RETURN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BookId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
